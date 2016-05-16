@@ -1,0 +1,39 @@
+img.resize{
+    width:540px;
+    height: auto;
+    
+}
+h4{
+    font-size:14pt;
+    font-variant: small-caps;
+    padding-top: 12px;
+    margin-top: 16px auto;
+    margin: 0;
+}
+h5{
+    text-indent: 10px;
+  
+}
+div h5{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 12pt;
+}
+#date{
+    text-align: right;
+    float: right;
+}
+ul{
+    margin: 0;
+}
+#resume-width{
+    background-color: #f6f6f6;
+    padding: 20px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto; 
+}
+li{
+    font-size: 11pt;
+}
