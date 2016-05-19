@@ -1,11 +1,12 @@
 angular.module('app',[]);
 
-angular.module('app').controller('MainCtrl', function($scope){
+angular.module('app').controller('MainCtrl', function(){
+    var self=this;
     
-    $scope.message= 'hello';
+    self.message= 'hello';
     
-    $scope.updateMessage= function(message){
-        $scope.message = message;
+    self.updateMessage= function(message){
+        self.message = message;
     };
 
 });
