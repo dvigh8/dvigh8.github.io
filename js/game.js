@@ -42,7 +42,8 @@ function initScene() {
     floor.material = grassMaterial;
 
     // Create light
-    var light = new BABYLON.PointLight("light", new BABYLON.Vector3(10,10,0), scene);
+    var light = new BABYLON.PointLight("light", new BABYLON.Vector3(3,2,0), scene);
+    var light2 = new BABYLON.PointLight("light", new BABYLON.Vector3(-10,10,0), scene);
    
     engine.runRenderLoop(function () {
         scene.render();
@@ -55,6 +56,8 @@ function initGame(){
     sphere.position.y= 1.7;
     
     var animationBox = new BABYLON.Animation("myAnimation", "position.z", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+    var animationRotation = new BABYLON.Animation("myAnimation", "rotation.y", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+    var animationRotationz = new BABYLON.Animation("myAnimation", "rotation.z", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
     
     // An array with all animation keys
     var keys = [];  
@@ -83,10 +86,28 @@ function initGame(){
     keys.push({
         frame: 180,
         value: 18.4404
+    });   
+    // An array with all animation keys
+    var rkeys = [];  
+ 
+   //At the animation key 0, the value of scaling is "1"
+    rkeys.push({
+        frame: 0,
+        value: 0
+    });
+ 
+    //At the animation key 100, the value of scaling is "1"
+    rkeys.push({
+        frame: 180,
+        value: Math.PI*12
     });
     animationBox.setKeys(keys);
+    animationRotation.setKeys(rkeys);
+    animationRotationz.setKeys(rkeys);
 
     sphere.animations.push(animationBox);
+    sphere.animations.push(animationRotation);
+//    sphere.animations.push(animationRotationz);
     scene.beginAnimation(sphere, 0, 180, true);
     var material = new BABYLON.StandardMaterial("material01", scene);
 
