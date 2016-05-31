@@ -1,7 +1,7 @@
 // Global variables
 var canvas, engine, scene, camera, score = 0;
 var TOAD_MODEL;
-
+var animationRotation;
 // An array to store each ending of the lane
 var ENDINGS = [];
 
@@ -54,9 +54,10 @@ function initGame(){
     
     var sphere = BABYLON.Mesh.CreateSphere("sphere", 10, 0.07366, scene);
     sphere.position.y= 1.7;
+    sphere.position.z= 1;
     
     var animationBox = new BABYLON.Animation("myAnimation", "position.z", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
-    var animationRotation = new BABYLON.Animation("myAnimation", "rotation.y", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+    animationRotation = new BABYLON.Animation("myAnimation", "rotation.x", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
     var animationRotationz = new BABYLON.Animation("myAnimation", "rotation.z", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
     
     // An array with all animation keys
@@ -99,25 +100,44 @@ function initGame(){
     //At the animation key 100, the value of scaling is "1"
     rkeys.push({
         frame: 180,
-        value: Math.PI*12
+        value: -Math.PI*24
     });
     animationBox.setKeys(keys);
     animationRotation.setKeys(rkeys);
     animationRotationz.setKeys(rkeys);
 
-    sphere.animations.push(animationBox);
+   sphere.animations.push(animationBox);
     sphere.animations.push(animationRotation);
 //    sphere.animations.push(animationRotationz);
     scene.beginAnimation(sphere, 0, 180, true);
+//    Animation.CreateAndStartAnimation = function("rotation", mesh, tartgetProperty, framePerSecond, totalFrame, from, to, loopMode);
+    //BABYLON.Animation.CreateAndStartAnimation("rotation", sphere, "rotation.x", 30, 30, 0, -Math.PI*4, true);
     var material = new BABYLON.StandardMaterial("material01", scene);
 
     sphere.material = material;
 
-    material.diffuseTexture = new BABYLON.Texture("baseball.png", scene);
+    material.diffuseTexture = new BABYLON.Texture("invertedyellowbaseball.png", scene);
     
     console.log("animated")
 }        
 function createFloor(scene) {
   var floor = BABYLON.Mesh.CreateGround("floor", 100, 100, 1, scene, false);
   return floor;
+}
+function onePerSecond(v){
+    console.log("startingCange")
+     var rkeys = [];
+    rkeys.push({
+        frame: 0,
+        value: 0
+    });
+ 
+    //At the animation key 100, the value of scaling is "1"
+    rkeys.push({
+        frame: 120,
+        value: -Math.PI*8*v
+    });
+    
+     animationRotation.setKeys(rkeys);
+    console.log("changed");
 }
