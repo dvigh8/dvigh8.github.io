@@ -35,8 +35,8 @@ function initScene() {
     camera.attachControl(canvas);
     
     var floor = createFloor(scene);
-    var grass = new BABYLON.StandardMaterial("grass", scene);
-    var grasTexture = new BABYLON.MarbleProceduralTexture("grass", 512, scene);
+    //var grass = new BABYLON.StandardMaterial("grass", scene);
+    //var grasTexture = new BABYLON.GrassProceduralTexture("grass", 512, scene);
 
     // Create light
     var light = new BABYLON.PointLight("light", new BABYLON.Vector3(100,101,0), scene);
