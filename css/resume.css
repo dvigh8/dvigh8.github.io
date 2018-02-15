@@ -1,7 +1,7 @@
 img.resize{
     width:540px;
     height: auto;
-    
+
 }
 h4{
     font-size:14pt;
@@ -13,7 +13,7 @@ h4{
 h5{
     text-indent: 10px;
 	font-weight: normal;
-  
+
 }
 div h5{
     display: inline-block;
@@ -29,11 +29,11 @@ ul{
     margin: 0;
 }
 #resume-width{
-    background-color: #f6f6f6;
-    padding: 20px;
+    background-color: #ffffff;
+    padding: 10px;
     max-width: 900px;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
 }
 li{
     font-size: 11pt;
