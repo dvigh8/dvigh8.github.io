@@ -1,0 +1,205 @@
+#a {
+	position: relative;
+	height: 500px;
+	width: 500px;
+	fill: #ff3422;
+}
+#awrap {
+	position: absolute;
+	left: -250px;
+	top: -175px;
+}
+.text {
+	position: absolute;
+	font-size: 1em;
+	color: #eaeaea;
+	top: 20px;
+}
+#atext {
+    left: -400px;
+    top: 330px;
+    color: #eaeaea;
+    padding-left: 400px;
+}
+#b {
+	position: relative;
+	left: 5188px;
+	height: 43px;
+	width: 43px;
+	fill: #e53e00;
+}
+#btext {
+	left: 5006px;
+	color: #eaeaea;
+	padding-left: 200px;
+}
+#c {
+	position: relative;
+	left: 7125px;
+	height: 42px;
+	width: 42px;
+	fill: #cd853f;
+}
+#ctext {
+	left: 6989px;
+	color: #eaeaea;
+	padding-left: 200px;
+
+}
+#d {
+	position: relative;
+	left: 9813px;
+	height: 31px;
+	width: 31px;
+	fill: #1a3c5e;
+}
+#dtext {
+	left: 9717px;
+	color: #eaeaea;
+	padding-left: 200px;
+
+}
+#e {
+	position: relative;
+	left: 13094px;
+	height: 37px;
+	width: 37px;
+	fill: #0000a0;
+}
+#etext {
+	left: 13036px;
+	color: #eaeaea;
+	padding-left: 200px;
+}
+#f {
+	position: relative;
+	left: 17313px;
+	height: 42px;
+	width: 42px;
+	fill: #0000a0;
+}
+#ftext {
+	left: 17299px;
+	color: #eaeaea;
+	padding-left: 200px;
+}
+#g {
+	position: relative;
+	left: 21031px;
+	height: 45px;
+	width: 45px;
+	fill: #46523c;
+}
+#gtext {
+	left: 21064px;
+	color: #eaeaea;
+	padding-left: 200px;
+
+}
+#h {
+	position: relative;
+	left: 29375px;
+	height: 30px;
+	width: 30px;
+	fill: #f4a460;
+}
+#htext {
+	left: 29450px;
+	color: #eaeaea;
+	padding-left: 200px;
+
+}
+#m {
+	position: relative;
+    left: 180669px;
+	height: 15px;
+	width: 15px;
+    fill: #cd853f
+}
+#mtext {
+    left: 180773px;
+	color: #eaeaea;
+    padding-left: 200px;
+}
+#earth {
+	position: relative;
+    left: 467158px;
+	height: 40px;
+	width: 40px;
+	fill: #00ffc0
+}
+#earthtext {
+    
+    left: 467292px;
+	color: #eaeaea;
+	padding-left: 200px;
+}
+body {
+	background-color: #000000;
+	color: #eaeaea;
+	margin: 0px;
+	padding: 0px;
+	overflow-y: hidden;
+	font-family: 'Gotham SSm A', Arial, sans-serif; 
+	font-style: normal;
+}
+.labeltext {
+	position: absolute;
+	font-family: 'Gotham SSm A', Arial, sans-serif; 
+	font-weight: 200; 
+	font-style: normal;
+	font-size: 1.5em;
+	color: #eaeaea;
+}
+#intro {
+	float: left;
+	display: inline;
+}
+#solarsystem {
+	position: relative;
+	top: 40%;
+}
+.nav {
+    position: fixed;
+    width: 500px;
+    height: 100px;
+    top: 0px;
+    left: 50%;
+    margin-left: -250px;
+}
+#distance {
+    position: fixed;
+    text-align: right;
+    width: 200px;
+    height: 100px;
+    top: 0px;
+    left: 100%;
+    margin: 10px;
+    margin-left: -220px;
+}
+#time {
+    position: fixed;
+    text-align: right;
+    width: 200px;
+    height: 100px;
+    top: 0px;
+    left: 100%;
+    margin: 10px;
+    margin-left: -420px;
+    visibility: hidden;
+}
+.nav li {
+    display: inline;
+    margin: 10px;
+    list-style-type: none;
+}
+.nav li:hover {
+    color: cyan;
+}
+#space {
+	position: absolute;
+	left: 1000px;
+	background-color: #000000;
+	width: 469999px;
+	height: 99.9%;
+}

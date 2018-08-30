@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title id="pgtitle">TRAPPIST-1</title>
+        <link rel="icon" href="https://s-media-cache-ak0.pinimg.com/originals/1a/b0/b2/1ab0b265a08484d8d8d7eee8c9af0fdc.jpg">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<link href="../css/trappist-1.css" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="../js/trappist-1.js"></script>
+	</head>
+    <body onload="init();">
+        <div id="intro">
+			<h1>TRAPPIST-1 Solar System</h1>
+			<p>Each pixel on this screen is ~320 km</p>
+			<p>That's roughly the width of Iceland</p>
+			<p>Clicking the star will expand it to the size of our sun</p>
+			<p>Double clicking the space beyond the star will engage/disengage lightspeed</p>
+			<p>Inspiration for this came from <a style="color:white" href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">The Universe if the moon where a pixel,</a><br>but in this the moon would be abuot 10 pixels.</p>
+            <p>Documentation is avalible <a style="color:white" href="TRAPPIST1.pdf">here</a>.</p>
+            <a href=".." class="active">Home</a>
+            <p style="position:fixed;bottom:0px">Created by David Josephs</p>
+		</div>
+        <div id="move" style="position:relative"></div>
+        <div id="space" ondblclick="lightspeed()">
+            <div id="solarsystem">
+
+				<!-- we are assuming that the radius of TRAPPIST a is .114 the solar radius of the sun. This is a distance of ~80000 km, diameter is 160,000 km. Each pixel is aproxamatly 320 km-->
+
+				<div onclick="switchstar()" id="awrap">
+					<svg version="1.1" id="a" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+						<circle cx="5" cy="5" r="5"></circle>
+					</svg>
+				</div>
+                <div id="atext" class="labeltext">
+                    <img src="img/arrow.svg"><br/>
+                    <span id="blabel">TRAPPIST A</span><br/>
+                </div>
+
+				<svg version="1.1" id="b" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+					<circle cx="5" cy="5" r="5"></circle>
+				</svg>
+				<div id="btext" class="labeltext">
+					<img src="img/arrow.svg"><br/>
+					<span id="blabel">TRAPPIST B</span><br/>
+				</div>
+
+				<svg version="1.1" id="c" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+					<circle cx="5" cy="5" r="5"></circle>
+				</svg>
+
+				<div id="ctext" class="labeltext">
+					<img src="img/arrow.svg"><br/>
+					<span id="blabel">TRAPPIST C</span><br/>
+				</div>
+
+				<svg version="1.1" id="d" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+					<circle cx="5" cy="5" r="5"></circle>
+				</svg>
+				<div id="dtext" class="labeltext">
+					<img src="img/arrow.svg"><br/>
+					<span id="blabel">TRAPPIST D</span><br/>
+				</div>
+
+				<svg version="1.1" id="e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+					<circle cx="5" cy="5" r="5"></circle>
+				</svg>
+				<div id="etext" class="labeltext">
+					<img src="img/arrow.svg"><br/>
+					<span id="blabel">TRAPPIST E</span><br/>
+				</div>
+
+				<svg version="1.1" id="f" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+					<circle cx="5" cy="5" r="5"></circle>
+				</svg>
+				<div id="ftext" class="labeltext">
+					<img src="img/arrow.svg"><br/>
+					<span id="blabel">TRAPPIST F</span><br/>
+				</div>
+
+				<svg version="1.1" id="g" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+					<circle cx="5" cy="5" r="5"></circle>
+				</svg>
+				<div id="gtext" class="labeltext">
+					<img src="img/arrow.svg"><br/>
+					<span id="blabel">TRAPPIST G</span><br/>
+				</div>
+
+				<svg version="1.1" id="h" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+					<circle cx="5" cy="5" r="5"></circle>
+				</svg>
+				<div id="htext" class="labeltext">
+					<img src="img/arrow.svg"><br/>
+					<span id="blabel">TRAPPIST H</span><br/>
+				</div>
+
+                <svg version="1.1" id="m" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+					<circle cx="5" cy="5" r="5"></circle>
+				</svg>
+				<div id="mtext" class="labeltext">
+					<img src="img/arrow.svg"><br/>
+					<span id="blabel">MERCURY</span><br/>
+				</div>
+
+                <svg version="1.1" id="earth" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="10px" height="10px" viewBox="0 0 10 10">
+					<circle cx="5" cy="5" r="5"></circle>
+				</svg>
+				<div id="earthtext" class="labeltext">
+					<img src="img/arrow.svg"><br/>
+					<span id="blabel">EARTH</span><br/>
+				</div>
+
+				<div class="text" style="left:12000px">This is the start of the "Habital Zone." Meaning it's cool enough for liquid water to exist</div>
+				<div class="text" style="left:25000px">We are now leaving the Habital Zone after this it's too cold for liquid water, meaning life as we know it, to exist</div>
+				<div class="text" style="left:29800px">TRAPPIST H, the coolest planet in the solar system. He knows how to party</div>
+				<div class="text" style="left:31250px">We are now 10 million km from TRAPPIST A, still a long way to go before we would reach Mercury</div>
+                <div class="text" style="left:180069px">While we are already done with all the TRAPPIST planets, this is where our planets start</div>
+                <div class="text" style="left:466682px">Finally we reach the earth, which if this was our sun would be really really cold at this point</div>
+
+            </div>
+		</div>
+        <div id="distance" onclick=changedistance()></div>
+        <div id="time"></div>
+        <ul class="nav">
+            <li onclick="goto('A')">A</li>
+            <li onclick="goto('B')">B</li>
+            <li onclick="goto('C')">C</li>
+            <li onclick="goto('D')">D</li>
+            <li onclick="goto('E')">E</li>
+            <li onclick="goto('F')">F</li>
+            <li onclick="goto('G')">G</li>
+            <li onclick="goto('H')">H</li>
+            <li onclick="goto('M')">Mercury</li>
+            <li onclick="goto('T')">Earth</li>
+        </ul>
+	</body>
+</html>
