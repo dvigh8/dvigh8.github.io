@@ -6,12 +6,15 @@ function init(){
     config = {minimumFractionDigits : 0, maximumFractionDigits: 0}
     updateDistance();
 }
+function goBack() {
+    window.history.back();
+}
 function goto(input){
     var position;
     switch(input) {
         case 'A':
             position = '#atext'
-            break; 
+            break;
         case 'B':
             position = '#btext'
             break;
@@ -46,7 +49,7 @@ function goto(input){
 function updateDistance(){
     var px = (window.pageXOffset - $('#solarsystem').position().left) - 1000;
     if(px < 0)px=0;
-    $('#distance').text(Number(px * 320 * conversion).toLocaleString(undefined,config) + units) 
+    $('#distance').text(Number(px * 320 * conversion).toLocaleString(undefined,config) + units)
 }
 $(window).scroll(updateDistance);
 
