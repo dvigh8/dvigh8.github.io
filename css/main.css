@@ -36,12 +36,14 @@ body {
 .navbar {
     overflow: hidden;
     /* background-color: #333; */
-    background: rgba(30, 30, 30, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     position: sticky;
     position: -webkit-sticky;
     top: 0;
 }
-
+.pad{
+    padding: 10px;
+}
 /* Style the navigation bar links */
 .navbar a {
     float: left;
@@ -55,6 +57,12 @@ body {
     padding: 14px 20px;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
 
 /* Right-aligned link */
 .navbar a.right {
