@@ -7,18 +7,18 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<link href="../css/trappist-1.css" rel="stylesheet" type="text/css">
         <script type="text/javascript" src="../js/trappist-1.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	</head>
     <body onload="init();">
         <div id="intro">
 			<h1>TRAPPIST-1 Solar System</h1>
 			<p>Each pixel on this screen is ~320 km</p>
 			<p>That's roughly the width of Iceland</p>
-			<p>Clicking the star will expand it to the size of our sun</p>
-			<p>Double clicking the space beyond the star will engage/disengage lightspeed</p>
-			<p>Inspiration for this came from <a style="color:white" href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">The Universe if the moon where a pixel,</a><br>but in this the moon would be abuot 10 pixels.</p>
-            <p>Documentation is avalible <a style="color:white" href="TRAPPIST1.pdf">here</a>.</p>
-            <p onclick="goBack()">Home</p>
-            <p style="position:fixed;bottom:0px">Created by David Josephs</p>
+			<p>Clicking the star will expand it to the size of the sun</p>
+			<p>Double click the space beyond trappist A to engage lightspeed</p>
+			<p>Inspiration drawn from <a style="color:white" href="http://joshworth.com/dev/pixelspace/pixelspace_solarsystem.html">"The Universe if the moon where a pixel"</a></p>
+            <p><a style="color:white" href="TRAPPIST1.pdf">More info here</a></p>
+	    <p style="position:absolute;bottom:0px"><i class="fa fa-home" onclick="goBack()"></i> David Josephs &copy; 2019</p>
 		</div>
 
         <div id="move" style="position:relative"></div>
@@ -132,6 +132,7 @@
             <li onclick="goto('H')">H</li>
             <li onclick="goto('M')">Mercury</li>
             <li onclick="goto('T')">Earth</li>
+	    <li onclick="goBack()"><i class="fa fa-home"></i></li>
         </ul>
 	</body>
 </html>
