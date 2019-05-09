@@ -63,18 +63,23 @@ function update_ui(color) {
 function next_operation() {
 
   if (state['round'] == state['rest'] && state['rest'] != vals['rounds']) {
-
-    t_timerVar = setInterval(function() {
-      count_down('t_time', t_time)
-    }, 1000)
-
     active_time = [vals['time_active']]
-    timerVar = setInterval(function() {
-      count_down('time', active_time)
-    }, 1000)
-
     state['round'] += 1
     color = 'red'
+
+    if (active_time[0] != 0) {
+
+      t_timerVar = setInterval(function() {
+        count_down('t_time', t_time)
+      }, 1000)
+
+      timerVar = setInterval(function() {
+        count_down('time', active_time)
+      }, 1000)
+    } else {
+      next_operation();
+    }
+
 
   } else if (state['round'] > state['rest']) {
     if (vals['rounds'] == state['round'] && vals['sets'] > state['set']) {
@@ -85,7 +90,7 @@ function next_operation() {
       state['rest'] = 0
       color = 'blue'
 
-      if (rest_time != 0) {
+      if (rest_time[0] != 0) {
 
         t_timerVar = setInterval(function() {
           count_down('t_time', t_time)
@@ -101,18 +106,22 @@ function next_operation() {
       color = 'black'
 
     } else {
-
-      t_timerVar = setInterval(function() {
-        count_down('t_time', t_time)
-      }, 1000)
-
-      rest_time = [vals['time_rest']];
-      timerVar = setInterval(function() {
-        count_down('time', rest_time)
-      }, 1000)
-
       state['rest'] += 1
       color = 'green'
+      rest_time = [vals['time_rest']];
+
+      if (rest_time[0] != 0) {
+
+        t_timerVar = setInterval(function() {
+          count_down('t_time', t_time)
+        }, 1000)
+
+        timerVar = setInterval(function() {
+          count_down('time', rest_time)
+        }, 1000)
+      } else {
+        next_operation();
+      }
     }
   }
 
