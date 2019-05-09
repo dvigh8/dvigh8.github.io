@@ -95,16 +95,17 @@ img {
  display: table;
  clear: both;
 }
-
+.clear { clear: both; height: 7rem; }
 /* Footer */
 .footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
   font-size: 1rem;
   text-align: center;
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0,.8); /*0.8);*/
+  background: rgba(0, 0, 0); /*0.8);*/
   color: white;
-  position:absolute;
+  position:fixed;
   bottom:0;
   width:100%;
 }
@@ -142,6 +143,7 @@ img {
 /* The "responsive" class is added to the navbar with JavaScript when the user clicks on the icon. This class makes the navbar look good on small screens (display the links vertically instead of horizontally) */
 @media screen and (max-width: 63rem) {
  /* .navbar.responsive {position: relative;} */
+ .clear { height: 14rem; }
  .navbar.responsive a.icon {
    position: absolute;
    right: 0;
