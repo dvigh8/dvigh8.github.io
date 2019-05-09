@@ -1,4 +1,3 @@
-var time = [0];
 var t_time = [0];
 var vals = [];
 var state = []
@@ -9,11 +8,7 @@ var t_timerVar;
 function start_timer() {
   clearInterval(timerVar)
   clearInterval(t_timerVar)
-  pre_count = [0]
-  if ($('#precount').prop('checked')==true) {
-    pre_count = [5];
 
-  } 
   state = [0, 1, 0]
 
   vals = [parseInt($('#num_rounds').val()), // 0
@@ -22,17 +17,20 @@ function start_timer() {
     parseInt($('#time_rest_m').val()) * 60 + parseInt($('#time_rest_s').val()), // 3
     parseInt($('#set_rest_m').val()) * 60 + parseInt($('#set_rest_s').val()) // 4
   ]
-
-  t_time = [vals[0] * vals[2] +
-    (vals[0] - 1) * vals[3] +
-    (vals[1] - 1) * vals[4] +
-    pre_count[0]
-  ]
-console.log([pre_count])
+  pre_time = [0]
   $('#time').css('color','blue')
-  timerVar = setInterval(function() {
-    count_down('time', pre_count)
-  }, 1000)
+  if ($('#precount').prop('checked')==true) {
+    pre_time = [5];
+    timerVar = setInterval(function() {
+      count_down('time', pre_time)
+    }, 1000)
+  }else{next_operation()}
+  t_time = [vals[0] * vals[2] +
+  (vals[0] - 1) * vals[3] +
+  (vals[1] - 1) * vals[4] +
+  pre_time[0]
+]
+
   t_timerVar = setInterval(function() {
     count_down('t_time', t_time)
   }, 1000)
@@ -123,7 +121,7 @@ function count_down(obj, t) {
     next_operation()
   }
 
-  $('#' + obj).html(pad(Math.floor(t / 60), 2) + ':' + pad(t % 60, 2));
+  $('#' + obj).html(pad(Math.floor(t[0] / 60), 2) + ':' + pad(t[0] % 60, 2));
   t[0] = t[0] - 1;
 
 }
