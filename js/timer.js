@@ -3,12 +3,13 @@ var vals = {}
 var state = {}
 var timerVar;
 var t_timerVar;
+var sound;
 
 
 function start_timer() {
   clearInterval(timerVar)
   clearInterval(t_timerVar)
-
+  sound = new Audio('../audio/beep.wav')
   state = {
     'round': 0,
     'set': 1,
@@ -48,11 +49,14 @@ function update_ui(color) {
   $('#round').html(state['round']);
   $('#set').html(state['set']);
   $('#time').css('color', color)
-  if (color == 'black' || color == 'purple') {
+  if (color == 'black' ) {
     $('#time').html('00:00')
     $('#t_time').html('00:00')
     clearInterval(timerVar)
     clearInterval(t_timerVar)
+  }
+  else{
+    sound.play();
   }
 }
 
