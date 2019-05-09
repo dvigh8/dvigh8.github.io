@@ -23,27 +23,80 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
+    <br>
+    <div class="row" style='text-align:center'>
+      <div class="column2 roundset" style="float:left">
+        <div class="row">
+          <div class="column3" style="text-align:right;">
+            <div class="item_height"> Rounds per set:</div>
 
+            <div class="item_height"> Number of sets:</div>
+
+          </div>
+          <div class="column3" style="text-align:left">
+            <div class="item_height"> <input value='1' min='1' max="1000" type='number' id='num_rounds' /></div>
+
+            <div class="item_height"> <input value='1' min='1' max="1000" type='number' id='num_sets' /></div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="column2 time">
+        <div class="row">
+          <div class="column3" style="text-align:right;">
+            <div class="item_height">Time active: </div>
+            <div class="item_height">Time rest: </div>
+            <div class="item_height">Rest between sets: </div>
+
+          </div>
+          <div class="column3" style="text-align:left">
+
+            <div class="item_height"><input style='height:2em' value='0' min='0' max=60 type='number' id='time_active_m' /> <input value='5' min='0' max='60' type='number' id='time_active_s' />mm:ss</div>
+
+            <div class="item_height"><input value='0' min='0' max=60 type='number' id='time_rest_m' /> <input value='0' min='0' max='60' type='number' id='time_rest_s' />mm:ss</div>
+
+            <div class="item_height"><input value='0' min='0' max='60' type='number' id='set_rest_m' /> <input value='0' min='0' max='60' type='number' id='set_rest_s' />mm:ss</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="column3" style="text-align:right;">
+
+        <div class="item_height">Round:</div>
+        <div class="item_height">Set:</div>
+        <div class="item_height">Time:</div>
+        <div class="item_height">Total Time:</div>
+      </div>
+      <div class="column3" style="text-align:left">
+        <div class="item_height" id='round' style="">0</div>
+
+        <div class="item_height" id='set'>0</div>
+
+        <div class="item_height" id='time'>00:00</div>
+
+        <div class="item_height" id='t_time'>00:00</div>
+
+      </div>
+    </div>
     <div style='text-align:center'>
-      Rounds per set: <input value='1' min='1' type='number' id='num_rounds' />
-      Time active: <input value='0' min='0' max=60 type='number' id='time_active_m' /> Minutes <input value='5' min='0' max='60' type='number' id='time_active_s' /> Seconds
-      <br />
-      Number of sets: <input value='1' min='1' type='number' id='num_sets' />
-      Time rest: <input value='0' min='0' max=60 type='number' id='time_rest_m' /> Minutes <input value='0' min='0' max='60' type='number' id='time_rest_s' /> Seconds
-      <br />
-      Rest between sets: <input value='0' min='0' max='60' type='number' id='set_rest_m' /> Minutes<input value='0' min='0' max='60' type='number' id='set_rest_s' /> Seconds
+
+
+      <button onclick="start_timer()">Start</button>
+
+
+
+
     </div>
-    <button onclick="start_timer()">Start</button>
-    <div>
-      Round: <div id='round' style=""> 0 </div> Set: <div id='set'>0</div>
-      Time: <div id='time'>00:00</div> Total Time: <div id='t_time'>00:00</div>
-    </div>
-    <div>
+    <br>
+    <div style='text-align:center'>
       <button onclick="presets('tabata')">Tabata</button>
       <button onclick="presets('t')">Test</button>
-
     </div>
-
+    <br>
     <div class='footer' id='footer'>
       <div class="row">
         <div class="column textcenter">
