@@ -1,6 +1,6 @@
 var t_time = [0];
-var vals = [];
-var state = []
+var vals = {}
+var state = {}
 var timerVar;
 var t_timerVar;
 
@@ -9,14 +9,14 @@ function start_timer() {
   clearInterval(timerVar)
   clearInterval(t_timerVar)
 
-  state = [0, 1, 0]
+  state = {'round':0, 'set':1, 'rest':0}
 
-  vals = [parseInt($('#num_rounds').val()), // 0
-    parseInt($('#num_sets').val()), // 1
-    parseInt($('#time_active_m').val()) * 60 + parseInt($('#time_active_s').val()), // 2
-    parseInt($('#time_rest_m').val()) * 60 + parseInt($('#time_rest_s').val()), // 3
-    parseInt($('#set_rest_m').val()) * 60 + parseInt($('#set_rest_s').val()) // 4
-  ]
+  vals = {'rounds':parseInt($('#num_rounds').val()), // 0
+    'sets':parseInt($('#num_sets').val()), // 1
+    'time_active':parseInt($('#time_active_m').val()) * 60 + parseInt($('#time_active_s').val()), // 2
+    'time_rest':parseInt($('#time_rest_m').val()) * 60 + parseInt($('#time_rest_s').val()), // 3
+    'set_rest':parseInt($('#set_rest_m').val()) * 60 + parseInt($('#set_rest_s').val()) // 4
+  }
   pre_time = [0]
   $('#time').css('color','blue')
   if ($('#precount').prop('checked')==true) {
@@ -25,12 +25,14 @@ function start_timer() {
       count_down('time', pre_time)
     }, 1000)
   }else{next_operation()}
-  t_time = [vals[0] * vals[2] +
-  (vals[0] - 1) * vals[3] +
-  (vals[1] - 1) * vals[4] +
-  pre_time[0]
-]
-
+  t_time = [vals['rounds'] * vals['time_active'] * vals['sets']+
+  (vals['rounds'] - 1) * vals['time_rest'] * vals['sets']+
+  (vals['sets'] - 1) * vals['set_rest'] +
+  pre_time[0]]
+  console.log(vals['rounds'] * vals['time_active']*vals['sets'])
+  console.log((vals['rounds'] - 1) * vals['time_rest']*vals['sets'])
+  console.log((vals['sets'] - 1) * vals['set_rest'])
+  console.log(pre_time[0])
   t_timerVar = setInterval(function() {
     count_down('t_time', t_time)
   }, 1000)
@@ -38,61 +40,66 @@ function start_timer() {
 }
 
 function update_ui(color) {
-  $('#round').html(state[0]);
-  $('#set').html(state[1]);
+  $('#round').html(state['round']);
+  $('#set').html(state['set']);
   $('#time').css('color',color)
-  if(color == 'black'){
+  if(color == 'black'|| color =='purple'){
     $('#time').html('00:00')
     $('#t_time').html('00:00')
+    clearInterval(timerVar)
+    clearInterval(t_timerVar)
   }
 }
 
 function next_operation() {
   console.log(state)
   console.log(vals)
-  if (state[0] == 0) {
-    active_time = [vals[2]]
+  if (state['round'] == 0) {
+    active_time = [vals['time_active']]
     timerVar = setInterval(function() {
       count_down('time', active_time)
     }, 1000)
-    state[0] += 1
+    state['round'] += 1
     color = 'red'
-  } else if (state[0] > state[2]) {
-    if (vals[0] == state[0] && vals[1] < state[1]) {
-      rest_time = [vals[4]]
+  } else if (state['round'] > state['rest']) {
+    if (vals['rounds'] == state['round'] && vals['sets'] > state['set']) {
+      rest_time = [vals['set_rest']]
 
       timerVar = setInterval(function() {
         count_down('time', rest_time)
       }, 1000)
-      state[0] = 0
-      state[1] += 1
-      state[2] = 0
-      color = 'green'
-    } else if (vals[0] == state[0] && vals[1] == state[1]){
-      color = 'black'
+      state['round'] = 0
+      state['set'] += 1
+      state['rest'] = 0
+      color = 'blue'
+    } else if (vals['rounds'] == state['round'] && vals['sets'] == state['set']){
+      color = 'purple'
     }
     else {
-      rest_time = [vals[3]];
+      rest_time = [vals['time_rest']];
       timerVar = setInterval(function() {
         count_down('time', rest_time)
       }, 1000)
-      state[2] += 1
+      state['rest'] += 1
       color = 'green'
     }
 
 
-  } else if(state[0] == state[2]){
-    active_time = [vals[2]]
+  } else if(state['round'] == state['rest'] && state['rest'] != vals['rounds']){
+    active_time = [vals['time_active']]
     timerVar = setInterval(function() {
       count_down('time', active_time)
     }, 1000)
-    state[0] += 1
+    state['round'] += 1
     color = 'red'
 
   }else{
     $('#time').html('00:00')
     color = 'black'
+    clearInterval(timerVar)
+    clearInterval(timerVar)
   }
+  console.log(state)
   setTimeout(function(){update_ui(color)},1000)
 }
 
@@ -107,17 +114,28 @@ function presets(t) {
     $('#set_rest_m').val(0);
     $('#set_rest_s').val(0);
   }
+  else if (t == 't') {
+    $('#num_rounds').val(2);
+    $('#time_active_m').val(0);
+    $('#time_active_s').val(10);
+    $('#time_rest_m').val(0);
+    $('#time_rest_s').val(5);
+    $('#num_sets').val(2);
+    $('#set_rest_m').val(0);
+    $('#set_rest_s').val(10);
+  }
 }
 
 function count_down(obj, t) {
 
-  if (t[0] == 1) {
+  if (t[0] <= 1) {
     if (obj == 'time') {
       clearInterval(timerVar)
 
     } else {
       clearInterval(t_timerVar)
     }
+    console.log(t)
     next_operation()
   }
 
