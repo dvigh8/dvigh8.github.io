@@ -5,19 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
   <title>David Josephs</title>
-  <link type="text/css" rel="stylesheet" href="css/main.css" />
+  <link type="text/css" rel="stylesheet" href="../css/main.css" />
+  <link type="text/css" rel="stylesheet" href="../css/timer.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 
 </head>
 
 <body>
 
   <div class="main-container">
-    <div class="header" id="home">
-
-      <h1>Hi, I'm David Josephs!</h1>
-
-    </div>
     <div class="navbar" id="myNavbar">
       <a href="#" class="active text">Home</a>
       <a href="resume" class="text">Resume</a>
@@ -27,13 +24,24 @@
       </a>
     </div>
 
-    <div style="text-align:center;padding-top:20px;font-size:2em">Welcome to my personal website!</div>
-    <div style="text-align:center;padding-top:20px;font-size:1em">Currently Underdevelopment to showcase my skills and past projects.</div>
-    <div style="text-align:center;padding-top:20px;font-size:1em">One of my hobbies is photograpy, here are some of the pictures I've taken. </div>
+    <div style='text-align:center'>
+      Rounds per set: <input value='1' min='1' type='number' id='num_rounds' />
+      Time active: <input value='0' min='0' max=60 type='number' id='time_active_m' /> Minutes <input value='0' min='0' max='60' type='number' id='time_active_s' /> Seconds
+      <br />
+      Number of sets: <input value='1' min='1' type='number' id='num_sets' />
+      Time rest: <input value='0' min='0' max=60 type='number' id='time_rest_m' /> Minutes <input value='0' min='0' max='60' type='number' id='time_rest_s' /> Seconds
+      <br />
+      Pre count <input type="checkbox" checked id='precount'> Rest between sets: <input value='0' min='0' max='60' type='number' id='set_rest_m' /> Minutes<input value='0' min='0' max='60' type='number' id='set_rest_s' /> Seconds
+    </div>
+    <button onclick="start_timer()">Start</button>
+    <div>
+      Round: <div id='round' style=""> 0 </div> Set: <div id='set'>0</div>
+      Time: <div id='time'>0</div> Total Time <div id='t_time'></div>
+    </div>
+    <div>
+      <button onclick="presets('tabata')">Tabata</button>
 
-    <div class="pad"><img class="center" src="img/ChicagoFireworks.jpg"></div>
-    <div class="pad"><img class="center" src="img/hurricane.jpg"></div>
-    <div class="pad"><img class="center" src="img/winterset.jpg"></div>
+    </div>
 
     <div class='footer' id='footer'>
       <div class="row">
@@ -45,6 +53,7 @@
 
           <br class="blank">
         </div>
+
         <div class="column textcenter">
           <div>Contact:</div>
           <div>Email: <a href="mailto:david.josephs&#64;djosephs.com"> david.josephs&#64;djosephs.com</a></div>
@@ -59,7 +68,8 @@
       </div>
     </div>
   </div>
-  <script src="js/scripts.js"></script>
+  <script src="../js/scripts.js"></script>
+  <script src="../js/timer.js"></script>
 
 </body>
 
