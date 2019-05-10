@@ -1,22 +1,22 @@
 var t_time = [0];
 var vals = {}
-var state = {}
+var place = 0
 var timerVar;
 var t_timerVar;
 var sound;
-
+var state = [[5]]
+var colors = ['blue']
 
 function start_timer() {
   clearInterval(timerVar)
   clearInterval(t_timerVar)
 
+  place = 0;
+  t_time = [0]
+  state = [[5]]
+  colors = ['blue']
+  rar = $('#rest_after').prop('checked');
   sound = new Audio('../audio/beep.wav')
-
-  state = {
-    'round': 0,
-    'set': 1,
-    'rest': 0
-  }
 
   vals = {
     'rounds': parseInt($('#num_rounds').val()), // 0
@@ -26,21 +26,39 @@ function start_timer() {
     'set_rest': parseInt($('#set_rest_m').val()) * 60 + parseInt($('#set_rest_s').val()) // 4
   }
 
-  t_timerVar = setInterval(function() {
-    count_down('t_time', t_time)
-  }, 1000)
+  for(i = 1; i <= vals['sets']; i++){
+    for(j = 1; j <= vals['rounds']; j++){
 
-  pre_time = [5];
-  timerVar = setInterval(function() {
-    count_down('time', pre_time)
-    $('#time').css('color', 'blue')
-  }, 1000)
+      if(vals['time_active'] != 0){
+        state.push([vals['time_active']]);
+        colors.push('red');
+      }
 
-  t_time = [vals['rounds'] * vals['time_active'] * vals['sets'] +
-    (vals['rounds'] - 1) * vals['time_rest'] * vals['sets'] +
-    (vals['sets'] - 1) * vals['set_rest'] +
-    pre_time[0]
-  ]
+      if(j < vals['rounds'] && vals['time_rest'] != 0){
+        state.push([vals['time_rest']]);
+        colors.push('green');
+      }else if(j == vals['rounds'] && rar && vals['time_rest'] != 0){
+        state.push([vals['time_rest']]);
+        colors.push('green');
+      }
+    }
+    if(i < vals['sets'] && vals['set_rest'] != 0){
+      state.push([vals['set_rest']]);
+      colors.push('blue');
+    }else if(i == vals['sets'] && rar && vals['set_rest'] != 0){
+      state.push([vals['set_rest']]);
+      colors.push('blue');
+    }
+  }
+  state.forEach(function(element){
+    t_time[0] += element[0];
+  })
+
+  next_operation();
+}
+function clear_timer(){
+  clearInterval(timerVar)
+  clearInterval(t_timerVar)
 }
 
 function update_ui(color) {
@@ -56,78 +74,32 @@ function update_ui(color) {
     clearInterval(timerVar)
     clearInterval(t_timerVar)
   }
-
-  sound.play();
+  if(place != 1){
+    sound.play();
+  }
 }
 
-function next_operation() {
+function next_operation(){
+  color = ''
+  if(place < state.length){
+    t_timerVar = setInterval(function() {
+      count_down('t_time', t_time)
+    }, 1000)
 
-  if (state['round'] == state['rest'] && state['rest'] != vals['rounds']) {
-    active_time = [vals['time_active']]
-    state['round'] += 1
-    color = 'red'
+    time = [state[place]]
+    timerVar = setInterval(function() {
+      count_down('time', time)
+    }, 1000)
 
-    if (active_time[0] != 0) {
-
-      t_timerVar = setInterval(function() {
-        count_down('t_time', t_time)
-      }, 1000)
-
-      timerVar = setInterval(function() {
-        count_down('time', active_time)
-      }, 1000)
-    } else {
-      next_operation();
-    }
-
-
-  } else if (state['round'] > state['rest']) {
-    if (vals['rounds'] == state['round'] && vals['sets'] > state['set']) {
-
-      rest_time = [vals['set_rest']]
-      state['round'] = 0
-      state['set'] += 1
-      state['rest'] = 0
-      color = 'blue'
-
-      if (rest_time[0] != 0) {
-
-        t_timerVar = setInterval(function() {
-          count_down('t_time', t_time)
-        }, 1000)
-        timerVar = setInterval(function() {
-          count_down('time', rest_time)
-        }, 1000)
-
-      } else {
-        next_operation()
-      }
-    } else if (vals['rounds'] == state['round'] && vals['sets'] == state['set']) {
-      color = 'black'
-
-    } else {
-      state['rest'] += 1
-      color = 'green'
-      rest_time = [vals['time_rest']];
-
-      if (rest_time[0] != 0) {
-
-        t_timerVar = setInterval(function() {
-          count_down('t_time', t_time)
-        }, 1000)
-
-        timerVar = setInterval(function() {
-          count_down('time', rest_time)
-        }, 1000)
-      } else {
-        next_operation();
-      }
-    }
+    color = colors[place]
+    place++;
+  }else{
+    color = 'black'
   }
-
   setTimeout(function() {
     update_ui(color)
   }, 1000)
+
 }
 
 function presets(t) {
@@ -140,6 +112,7 @@ function presets(t) {
     $('#num_sets').val(1);
     $('#set_rest_m').val(1);
     $('#set_rest_s').val(0);
+    $( "#rest_after" ).prop( "checked", false);
 
   } else if (t == 't') {
     $('#num_rounds').val(2);
@@ -150,7 +123,18 @@ function presets(t) {
     $('#num_sets').val(2);
     $('#set_rest_m').val(0);
     $('#set_rest_s').val(10);
+    $( "#rest_after" ).prop( "checked", false);
 
+  }else if(t == 'pizza'){
+    $('#num_rounds').val(1);
+    $('#time_active_m').val(0);
+    $('#time_active_s').val(0);
+    $('#time_rest_m').val(3);
+    $('#time_rest_s').val(0);
+    $('#num_sets').val(1);
+    $('#set_rest_m').val(8);
+    $('#set_rest_s').val(0);
+    $( "#rest_after" ).prop( "checked", true );
   }
 }
 
@@ -163,12 +147,9 @@ function count_down(obj, t) {
       clearInterval(t_timerVar)
     }
     next_operation()
-
   }
-
   $('#' + obj).html(pad(Math.floor(t[0] / 60), 2) + ':' + pad(t[0] % 60, 2));
   t[0] = t[0] - 1;
-
 }
 
 function pad(a, b) {

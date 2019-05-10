@@ -32,13 +32,14 @@
             <div class="item_height"> Rounds per set:</div>
 
             <div class="item_height"> Number of sets:</div>
+            <div class="item_height"> Rest after:</div>
 
           </div>
           <div class="column3" style="text-align:left">
             <div class="item_height"> <input value='1' min='1' max="1000" type='number' id='num_rounds' /></div>
 
             <div class="item_height"> <input value='1' min='1' max="1000" type='number' id='num_sets' /></div>
-
+            <div class="item_heiht"><input id="rest_after" type="checkbox"></div>
           </div>
         </div>
       </div>
@@ -86,12 +87,14 @@
     <div style='text-align:center'>
 
       <button onclick="start_timer()">Start</button>
+      <button onclick="clear_timer()">Clear</button>
 
     </div>
     <br>
     <div style='text-align:center'>
       <button onclick="presets('tabata')">Tabata</button>
       <button onclick="presets('t')">Test</button>
+      <button onclick="presets('pizza')">Pizza</button>
     </div>
     <br>
     <div class="clear"></div>
