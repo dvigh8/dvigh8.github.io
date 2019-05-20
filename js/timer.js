@@ -98,7 +98,7 @@ function next_operation(){
   }
   setTimeout(function() {
     update_ui(color)
-  }, 1000)
+  }, 990)
 
 }
 
