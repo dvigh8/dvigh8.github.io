@@ -34,6 +34,7 @@ body {
     background: rgba(0, 0, 0, 0.8);
     position: sticky;
     position: -webkit-sticky;
+    z-index: 1;
     top: 0;
 }
 /* Style the navigation bar links */
@@ -112,8 +113,32 @@ img {
 .footer a {
     color:	#707070;
 }
-.footer .blank{
+.imagebox {
+  position: relative;
+  max-width: 55rem;
+}
 
+.imagebox:hover .desc {
+  opacity: 1;
+}
+
+div.desc {
+  position: relative;
+  bottom: 3.4rem;
+  background: -webkit-linear-gradient(transparent, #000) center repeat;
+  background: linear-gradient(transparent, #000) center repeat;
+  transition: .5s ease;
+  opacity: 0;
+  color: white;
+  font-size: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  width: auto;
+  max-width: 55rem;
+  /* font-family: 'Fugaz One', Arial, Helvetica, sans-serif, serif; */
+  font-family: Arial, Helvetica, sans-serif, serif;
+  font-weight: lighter;
 }
 
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
