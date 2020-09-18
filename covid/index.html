@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>Interests</title>
+  <link rel="icon" href="../img/logo.png">
+  <link type="text/css" rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link type="text/css" rel="stylesheet" href="../css/resume.css" />
+
+  <script> 
+    $(function(){
+      $("#includedContent").load("deaths_per_million.html"); 
+    });
+  </script> 
+
+</head>
+
+<body>
+  <div class="navbar" id="myNavbar">
+    <a href=".." class="text">Home</a>
+    <a href="../resume" class="text">Resume</a>
+    <!-- <a href="../interests" class="active text">Interests</a>
+    <a href="../projects" class="text">Projects</a> -->
+    <a href="../trappist" class="text">Trappist Model</a>
+
+    <a href="../covid" class="active text">C-19 Dash</a>
+    <!-- <a href="../timer" class="text">Timer</a> -->
+    <a href="javascript:void(0);" class="icon text" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+
+  <div class="iframebox center">
+    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="deaths_per_million.html" height="900" width="100%"></iframe>
+  </div>
+  <div class="iframebox center">
+    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="positive_per_million.html" height="900" width="100%"></iframe>
+  </div>
+  <div class="iframebox center">
+    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="number_positive.html" height="900" width="100%"></iframe>
+  </div>
+  <div class="iframebox center">
+    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="total_positive.html" height="900" width="100%"></iframe>
+  </div>
+  <div class="iframebox center">
+    <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="currently_hospitalized.html" height="900" width="100%"></iframe>
+  </div>
+  
+
+
+
+  <div class="clear"></div>
+  <div class='footer' id='footer'>
+    <div class="row">
+      <div class="column textcenter">
+        <div>Links:</div>
+        <div><a href="https://github.com/josephsd">GitHub</a></div>
+        <div><a href="https://www.linkedin.com/in/josephsd/">LinkedIn</a></div>
+        <div><a href="https://www.hackerearth.com/@josephsd">HackerEarth</a></div>
+
+        <br class="blank">
+      </div>
+      <div class="column textcenter">
+        <div>Contact:</div>
+        <div>Email: <a href="mailto:david.josephs&#64;djosephs.com"> david.josephs&#64;djosephs.com</a></div>
+      </div>
+      <div class="column textcenter">
+        <div></div>
+        <br>
+        <div class=textcenter>David Josephs &copy; 2020</div>
+
+      </div>
+    </div>
+  </div>
+  <script src="../js/scripts.js"></script>
+</body>
+
+</html>
