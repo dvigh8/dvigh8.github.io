@@ -14,24 +14,31 @@
 <body>
 
   <div class="main-container">
-    <div class="header" id="home">
+    <div class="navbar" >
+      <nav role="navigation">
+        <div id="menuToggle">
 
-      <h1>Hi, I'm David Josephs!</h1>
+          <input style="padding-top:1rem" type="checkbox" />
 
+          <span></span>
+          <span></span>
+          <span></span>
+          
+          <ul id="menu">
+            <a href="#" class="text">Home</a>
+            <a href="resume" class="text">Resume</a>
+            <a href="trappist" class="text">Trappist Model</a>
+            <a href="covid" class="text">C-19 Dash</a>
+            <a href="https://www.linkedin.com/in/djosephs/" class="text">LinkedIn</a>
+            <a href="https://github.com/josephsd" class="text">Git Hub</a>
+            <div style="position:absolute;bottom:6rem;padding-top:.5rem">David Josephs &copy; 2020</div>
+          </ul>
+        </div>
+      </nav>
     </div>
-    <div class="navbar" id="myNavbar">
-      <a href="#" class="active text">Home</a>
-      <a href="resume" class="text">Resume</a>
-      <a href="trappist" class="text">Trappist Model</a>
-      <a href="covid" class="text">C-19 Dash</a>
+    
 
-      <!-- <a href="timer" class="text">Timer</a> -->
-      <a href="javascript:void(0);" class="icon text" onclick="myFunction()">
-        <i class="fa fa-bars"></i>
-      </a>
-    </div>
-
-    <div style="text-align:center;padding-top:20px;font-size:2em">Welcome to my personal website!</div>
+    <div style="text-align:center;padding-top:20px;font-size:2em">Welcome!</div>
     <div style="text-align:center;padding-top:20px;font-size:1em">Currently under development to showcase my skills and past projects.</div>
     <div style="text-align:center;padding-top:20px;font-size:1em">One of my hobbies is photograpy, here are some of the pictures I've taken. </div>
 
@@ -46,29 +53,6 @@
     </div>
 
     <div class="clear"></div>
-
-    <div class='footer' id='footer'>
-      <div class="row">
-        <div class="column textcenter">
-          <div>Links:</div>
-          <div><a href="https://github.com/josephsd">GitHub</a></div>
-          <div><a href="https://www.linkedin.com/in/josephsd/">LinkedIn</a></div>
-          <div><a href="https://www.hackerearth.com/@josephsd">HackerEarth</a></div>
-
-          <br class="blank">
-        </div>
-        <div class="column textcenter">
-          <div>Contact:</div>
-          <div>Email: <a href="mailto:david.josephs&#64;djosephs.com"> david.josephs&#64;djosephs.com</a></div>
-        </div>
-        <div class="column textcenter">
-          <div></div>
-          <br>
-          <div class=textcenter>David Josephs &copy; 2020</div>
-
-        </div>
-      </div>
-    </div>
   </div>
   <script src="js/scripts.js"></script>
 

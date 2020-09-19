@@ -13,21 +13,29 @@
 </head>
 
 <body>
-  <div class="navbar" id="myNavbar">
-    <a href=".." class="text">Home</a>
-    <a href="../resume" class="text">Resume</a>
-    <!-- <a href="../interests" class="active text">Interests</a>
-    <a href="../projects" class="text">Projects</a> -->
-    <a href="../trappist" class="text">Trappist Model</a>
+  <div class="navbar" >
+    <nav role="navigation">
+      <div id="menuToggle">
 
-    <a href="../covid" class="active text">C-19 Dash</a>
-    <!-- <a href="../timer" class="text">Timer</a> -->
-    <a href="javascript:void(0);" class="icon text" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
+        <input style="padding-top:1rem" type="checkbox" />
+
+        <span></span>
+        <span></span>
+        <span></span>
+        
+        <ul id="menu">
+          <a href=".." class="text">Home</a>
+          <a href="../resume" class="text">Resume</a>
+          <a href="../trappist" class="text">Trappist Model</a>
+          <a href="../covid" class="active text">C-19 Dash</a>
+          <a href="https://www.linkedin.com/in/djosephs/" class="text">LinkedIn</a>
+          <a href="https://github.com/josephsd" class="text">Git Hub</a>
+          <div style="position:absolute;bottom:6rem;padding-top:.5rem">David Josephs &copy; 2020</div>
+        </ul>
+      </div>
+    </nav>
   </div>
-
-
+ 
   <div class="pad iframebox center">
     <iframe id="igraph" scrolling="no" style="border:none;" seamless="seamless" src="deaths_per_million.html" height="900" width="100%"></iframe>
   </div>
@@ -44,32 +52,6 @@
     <iframe id="igraph5" scrolling="no" style="border:none;" seamless="seamless" src="currently_hospitalized.html" height="900" width="100%"></iframe>
   </div>
   
-
-
-
-  <div class="clear"></div>
-  <div class='footer' id='footer'>
-    <div class="row">
-      <div class="column textcenter">
-        <div>Links:</div>
-        <div><a href="https://github.com/josephsd">GitHub</a></div>
-        <div><a href="https://www.linkedin.com/in/josephsd/">LinkedIn</a></div>
-        <div><a href="https://www.hackerearth.com/@josephsd">HackerEarth</a></div>
-
-        <br class="blank">
-      </div>
-      <div class="column textcenter">
-        <div>Contact:</div>
-        <div>Email: <a href="mailto:david.josephs&#64;djosephs.com"> david.josephs&#64;djosephs.com</a></div>
-      </div>
-      <div class="column textcenter">
-        <div></div>
-        <br>
-        <div class=textcenter>David Josephs &copy; 2020</div>
-
-      </div>
-    </div>
-  </div>
   <script src="../js/scripts.js"></script>
 </body>
 

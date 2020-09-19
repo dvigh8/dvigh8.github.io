@@ -1,4 +1,8 @@
-html,
+html{
+  min-height:100%;/* make sure it is at least as tall as the viewport */
+  position:relative;
+  margin:0;
+}
 body {
  height: 100%;
  position: relative;
@@ -6,72 +10,26 @@ body {
  margin:0;
 }
 
-/* Header/logo Title */
-.header {
-    padding: 3rem;
-    text-align: center;
-    color: white;
-}
-#home{
-    background: #888888;
-    background-image: url("../img/ChicagoFireworks.jpg");
-    background-size: cover;
-}
-.iconheader{
-    height: 1.5rem;
-    width: 1.5rem;
-    padding: .75rem .8rem;
-}
-/* Increase the font size of the heading */
-.header h1 {
-    font-size: 2rem;
-}
-
-/* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
 .navbar {
-    overflow: hidden;
-    /* background-color: #333; */
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(255, 255, 255, 0.8);;
     position: sticky;
     position: -webkit-sticky;
     z-index: 1;
     top: 0;
+    height:4.5rem;
 }
 /* Style the navigation bar links */
 .navbar a {
-    float: left;
     display: block;
     color: white;
-    text-align: center;
     text-decoration: none;
 }
 .navbar a.text{
     padding: 1rem 1.3rem;
 }
-
-/* Right-aligned link */
-.navbar a.right {
-    float: right;
-}
-
-/* Change color on hover */
-.navbar a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Active/current link */
-.navbar a.active {
-    background-color: #666;
-    color: white;
-}
-.navbar .icon {
-  display: none;
-}
 .pad{
     padding: 1rem;
 }
-
 img {
     max-width:100%;
     height:auto;
@@ -85,7 +43,6 @@ img {
     margin-right: auto;
     height: auto;
 }
-
 .column {
  float: left;
  width: 33%;
@@ -98,21 +55,7 @@ img {
 }
 .clear { clear: both; height: 7rem; }
 /* Footer */
-.footer {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  font-size: 1rem;
-  text-align: center;
-  /* background: rgba(0, 0, 0,.8); /*0.8);*/
-  background: rgba(0, 0, 0); /*0.8);*/
-  color: white;
-  position:fixed;
-  bottom:0;
-  width:100%;
-}
-.footer a {
-    color:	#707070;
-}
+
 .imagebox {
   position: relative;
   max-width: 55rem;
@@ -140,47 +83,117 @@ div.desc {
   text-align: center;
   width: auto;
   max-width: 55rem;
-  /* font-family: 'Fugaz One', Arial, Helvetica, sans-serif, serif; */
   font-family: Arial, Helvetica, sans-serif, serif;
   font-weight: lighter;
 }
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 63rem) {
-  .column {
-    width: 100%;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-/* When the screen is less than 1000 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the navbar (.icon) */
-@media screen and (max-width: 63rem) {
- /* .navbar a {display: none;} */
- .navbar a:not(:first-child) {display: none;}
- .navbar a.icon {
-   float: right;
+ 
+ #menuToggle
+ {
    display: block;
+   position: relative;
+   top: 1.5rem;
+   left: 50px;
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
  }
-}
-@media screen and (min-width: 63rem){
-    .blank{
-      display: none;
-    }
-  }
-
-
-/* The "responsive" class is added to the navbar with JavaScript when the user clicks on the icon. This class makes the navbar look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 63rem) {
- /* .navbar.responsive {position: relative;} */
- .clear { height: 14rem; }
- .navbar.responsive a.icon {
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #232323;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: tomato;
+ }
+ 
+ #menuToggle input
+ {
+  margin-top:1rem;
+   display: block;
+   width: 4rem;
+   height: 2rem;
    position: absolute;
-   right: 0;
-   top: 0;
+   top: -1rem;
+   left: -1rem;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
  }
- .navbar.responsive a {
-   float: none;
+ #menuToggle span
+ {
    display: block;
-   text-align: left;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #000000;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
  }
-}
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+ }
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+ }
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ #menu
+ {
+   position: absolute;
+   width: 11.5rem;
+   margin: -3.25rem 0 0 -3.125rem;
+   padding: 1rem;
+   padding-top: 3.25rem;
+   padding-bottom:1rem;
+   /* top:0;
+   bottom:0; */
+   min-height: 100vh; 
+   background: #ededed;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.2s ;
+ }
+ 
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
