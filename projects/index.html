@@ -14,33 +14,15 @@
 
 <body>
   <div class="navbar" >
-    <nav role="navigation">
-      <div id="menuToggle">
-
-        <input style="padding-top:1rem" type="checkbox" />
-
-        <span></span>
-        <span></span>
-        <span></span>
-        
-        <ul id="menu">
-          <a href=".." class="text">Home</a>
-          <a href="../resume" class="text">Resume</a>
-          <a href="../interests" class="text">Interests</a>
-          <a href="../projects" class="text">Projects</a>
-          <a href="../trappist" class="text">Trappist Model</a>
-          <a href="../covid" class="text">C-19 Dash</a> 
-          <a href="https://www.linkedin.com/in/djosephs/" class="text">LinkedIn</a>
-          <a href="https://github.com/josephsd" class="text">Git Hub</a>
-          <div style="position:absolute;bottom:6rem;padding-top:.5rem">David Josephs &copy; 2020</div>
-        </ul>
-      </div>
-    </nav>
+    <div w3-include-html="https://djosephs.com/navbar.html"></div> 
   </div>
 
   <div class="clear"></div>
   
   <script src="../js/scripts.js"></script>
+  <script>
+    includeHTML();
+  </script> 
 </body>
 
 </html>
