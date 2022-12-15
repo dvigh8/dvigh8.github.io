@@ -1,7 +1,130 @@
-carrerr
-experiance
+careerer
+experience
 education
 certifications and awards 
 skills
-accomlished x measured by y doing z
+accomplished x measured by y doing z
 
+selected evaluated cloud providers and select gcp as off prem resource
+transformed on prem claims processing run in cloud environments claims processing v1.0
+optimized and stabilized ETL pipeline (required a rewrite of core pipeline components) clams processing v1.1
+system selection for Apollo. (primary mvp)  Apollo v1
+expanded etl pipeline flexibility to handle multiple data forms claims processing v2.0
+additional expansion of Apollo for brand teams Apollo v1.1
+integrated manually entered data into account mdm system Atlas
+general rewrite of Apollo to decrease processing time Apollo v2.0
+Rewrote clustering of accounts. increased clarity of good and bad matches (minimized the could couldn't matches) Atlas
+Rolled out internal website. Allowing direct access to data science outputs and services
+change brand team functionally rolled out to stakeholders Apollo v2.1
+interactive account mapping of account system Atlas
+Payer record tracking mvp Rosetta
+user interface for rosetta using the data science website
+keeping data science platform up to date on most performant clusters
+increased capabilities of data science website adding in external code bases
+
+
+
+Hi David,
+
+Great start! These things are always very difficult to type. I recommend focusing on your resume first. The cover letter doesn't matter so much as helping you articulate for yourself why you want the job and would be a good fit. One way to make your resume writing easier and more applicable to the job, is to craft your experience bullets to highlight as many of the listed skills required as possible. For example, instead of Continue MDM project development with stakeholders across analytics departments, can you break it down into things like, "Design and build MDM databases that are robust, modular, scalable, deployable, reproducible, and versioned" as much of that is actually applicable? "Interview stakeholders to understand data requirements to develop robust data landscapes" "Own multi-cloud platform for MDM to increase scalability" "Contribute to cross-functional problem-solving sessions to improve data quality".
+
+Overall, I think it would make your resume a lot stronger if you were to make the bullet points more clear as to the purpose of the action - e.g. Leveraged a multi-cloud platform (does this platform have a name btw?) to increase scalability of xyz. Tell us why the things you are/were doing are important. And then on your self employed one, you can also say self employed, and make the bullet points more general "Partnered with small businesses to develop their websites" - make it plural as this was a service you were offering.
+
+Look for certain themes and make sure you embed them in your resume. The key words I see from the responsibility bullets in the job posting are, ownership, develop, build, creativity, accountability, listening, contribute. Try to weave these in.
+
+If you need more space you can get rid of your internship at this point.
+
+Own the technical platform for advanced analytics engagements, spanning data science and data engineering work
+Design and build data pipelines for machine learning that are robust, modular, scalable, deployable, reproducible, and versioned
+Create and manage data environments and ensure information security standards are maintained at all times
+Own and be accountable for the delivery of technical work streams while also mentoring and guiding more junior colleagues
+Understand clients data landscape and assess data quality
+Map data fields to hypotheses and curate, wrangle and prepare data for use in advanced analytics models
+Have the opportunity to contribute to R&D projects and internal asset development
+Contribute to cross-functional problem-solving sessions with your team and our clients, from data owners and users to C-
+level executives, to address their needs and build impactful analytics solutions
+
+Let me know if this doesn't make sense or you have questions.
+
+_____________________________________________________________________________________________________________________________
+Senior Data Engineer - QuantumBlack
+AtlantaAustinBostonCharlotteChicagoDallasHoustonLos AngelesNew JerseyNew York City+ 6 More
+Apply Now
+WHO YOU'LL WORK WITH
+You will be part of our global data engineering community. You will work in cross-functional Agile project teams alongside data scientists, machine learning engineers, other data engineers, project managers, and industry experts. You will work hand-in-hand with our clients, from data owners, users, and fellow engineers to C-level executives
+Who you are
+You are a highly collaborative individual who wants to solve problems that drive business value. You have a strong sense of ownership and enjoy hands-on technical work. Our values resonate with yours.
+WHAT YOU'LL DO
+As a Senior Data Engineer, you will:
+
+Own the technical platform for advanced analytics engagements, spanning data science and data engineering work
+Design and build data pipelines for machine learning that are robust, modular, scalable, deployable, reproducible, and versioned
+Create and manage data environments and ensure information security standards are maintained at all times
+Own and be accountable for the delivery of technical work streams while also mentoring and guiding more junior colleagues
+Understand clients data landscape and assess data quality
+Map data fields to hypotheses and curate, wrangle and prepare data for use in advanced analytics models
+Have the opportunity to contribute to R&D projects and internal asset development
+Contribute to cross-functional problem-solving sessions with your team and our clients, from data owners and users to C-
+level executives, to address their needs and build impactful analytics solutions
+Our tech stack:
+
+While we advocate for using the right tech for the right task, we often leverage the following technologies: Python, PySpark, the PyData stack, SQL, Airflow, Databricks, our own open-source data pipelining framework called Kedro, Dask/RAPIDS, container technologies such as Docker and Kubernetes, cloud solutions such as AWS, GCP, and Azure, and more!
+
+What you'll benefit from:
+Real-World Impact– No project is ever the same, we work with top-tier clients across multiple sectors, providing unique learning and development opportunities internationally.
+Fusing Tech & Leadership– We work with the latest technologies and methodologies and offer first-class learning programs at all levels.
+Multidisciplinary Teamwork- Our teams include data scientists, engineers, project managers, UX and visual designers who work collaboratively to enhance performance. 
+Innovative Work Culture– Creativity, insight, and passion come from being balanced. We cultivate a modern work environment through an emphasis on wellness, insightful talks, and training sessions.
+Striving for Diversity– With colleagues from over 40 nationalities, we recognize the benefits of working with people from all walks of life.
+Continuous development and progression– We offer an extensive choice of training sessions, ranging from workshops to international conferences, tailored to your needs as well as a personal mentorship system. We have multiple career paths and geographic locations to evolve within the Firm.
+Global community– you'll learn from colleagues around the world by connecting both internally and externally through our various hosted meet-ups.
+Visit our Careers site to watch our video and read about our interview processes and benefits.
+QUALIFICATIONS
+Degree in computer science, engineering, mathematics, or equivalent work experience  Ability to write clean, maintainable, scalable, and robust code in an object-oriented language, e.g., Python, Scala, Java, in a professional settingProven experience building data pipelines in production for advanced analytics use casesExperience working across structured, semi-structured, and unstructured dataPractical knowledge of software engineering concepts and best practices, inc. DevOps, DataOps, and MLOps would be considered a plusFamiliarity with distributed computing frameworks (e.g. Spark, Dask), cloud platforms (e.g. AWS, Azure, GCP), containerization, and analytics libraries (e.g. pandas, NumPy, matplotlib)Ability to scope projects, define workstreams, and effectively lead and mentor more junior colleaguesCommercial client-facing or senior stakeholder management experienceWillingness to travel
+_____________________________________________________________________________________________________________________________
+_____________________________________________________________________________________________________________________________
+
+Data Engineer II - QuantumBlack
+AtlantaAustinBostonCharlotteChicagoDallasHoustonLos AngelesNew JerseyNew York City+ 6 More
+Apply Now
+WHO YOU'LL WORK WITH
+You will part of our global data engineering community. You will work in cross-functional Agile project teams alongside data scientists, machine learning engineers, other data engineers, project managers, and industry experts. You will work hand-in-hand with our clients, from data owners, users, and fellow engineers to C-level executives.
+Who you are
+You are a highly collaborative individual who wants to solve problems that drive business value. You have a strong sense of ownership and enjoy hands-on technical work. Our values resonate with yours.
+WHAT YOU'LL DO
+As a Data Engineer, you will:
+
+Help to build and maintain the technical platform for advanced analytics engagements, spanning data science and data engineering work
+Design and build data pipelines for machine learning that are robust, modular, scalable, deployable, reproducible, and versioned
+Create and manage data environments and ensure information security standards are maintained at all times
+Understand clients data landscape and assess data quality
+Map data fields to hypotheses and curate, wrangle, and prepare data for use in advanced analytics models
+Have the opportunity to contribute to R&D projects and internal asset development
+Contribute to cross-functional problem-solving sessions with your team and our clients, from data owners and users to C-level executives, to address their needs and build impactful analytics solutions
+Our tech stack:
+
+While we advocate for using the right tech for the right task, we often leverage the following technologies: Python, PySpark, the PyData stack, SQL, Airflow, Databricks, our own open-source data pipelining framework called Kedro, Dask/RAPIDS, container technologies such as Docker and Kubernetes, cloud solutions such as AWS, GCP, and Azure, and more!
+
+What you'll benefit from:
+Real-World Impact– No project is ever the same, we work with top-tier clients across multiple sectors, providing unique learning and development opportunities internationally.
+Fusing Tech & Leadership– We work with the latest technologies and methodologies and offer first-class learning programs at all levels.
+Multidisciplinary Teamwork- Our teams include data scientists, engineers, project managers, UX and visual designers who work collaboratively to enhance performance. 
+Innovative Work Culture– Creativity, insight, and passion come from being balanced. We cultivate a modern work environment through an emphasis on wellness, insightful talks, and training sessions.
+Striving for Diversity– With colleagues from over 40 nationalities, we recognize the benefits of working with people from all walks of life.
+Continuous development and progression– We offer an extensive choice of training sessions, ranging from workshops to international conferences, tailored to your needs as well as a personal mentorship system. We have multiple career paths and geographic locations to evolve within the Firm.
+Global community– you'll learn from colleagues around the world by connecting both internally and externally through our various hosted meet-ups.
+Visit our Careers site to watch our video and read about our interview processes and benefits.
+QUALIFICATIONS
+Degree in Computer Science, Engineering, Mathematics, or equivalent experience2+ years of relevant professional experienceAbility to write clean, maintainable, scalable and robust code in an object-oriented language, e.g., Python, Scala, Java, in a professional settingProven experience building data pipelines in production for advanced analytics use casesExperience working across structured, semi-structured and unstructured dataExposure to software engineering concepts and best practices, inc. DevOps, DataOps and MLOps would be considered a plusFamiliarity with distributed computing frameworks (e.g. Spark, Dask), cloud platforms (e.g. AWS, Azure, GCP), containerization, and analytics libraries (e.g. pandas, numpy, matplotlib)Commercial client-facing or senior stakeholder management experience would be beneficial
+
+
+
+
+
+
+
+
+
+_____________________________________________________________________________________________________________________________
+
+ 
