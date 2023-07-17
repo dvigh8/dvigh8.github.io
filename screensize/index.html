@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>David Josephs</title>
+  <link rel="icon" href="../img/logo.png">
+  <link type="text/css" rel="stylesheet" href="../css/main.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div style="background-color: aquamarine;height: 1080px;width:1920px">
+        <button type="button" id="open" style="padding: 10px;"> Calculate 1920x1080px</button>
+        <p> There are many different sizes of monitors starting at CGA with 320x200px to 8k UHD 7680x4320px this colored box is what is called FullHD or 1080p 1920x1080px</p>
+        <p> Click the button above to calculate how many Full HD monitor space your computer has</p>
+
+    </div>
+    
+
+    <script>
+        let url = "about:blank";
+        let x = "1000";
+        let y = "250";
+        let width = "250";
+        let height = "250";
+        let popup;
+        
+        async function getPermissionAndScreenDetails() {
+          if ('getScreenDetails' in window) {
+            let granted = false;
+            try {
+              const permission = await navigator.permissions.query({
+                name: 'window-placement'
+              });
+              console.log(permission, permission.state);
+              if (permission.state !== 'denied') {
+                return window.getScreenDetails();
+              } else {
+                return null;
+              }
+            } catch {
+              // Nothing.
+              return null;
+            }
+          } else {
+            return null;
+          }
+        }
+        
+        async function screenDetails() {
+          const screens = await getPermissionAndScreenDetails();
+          if (screens != null && window.screen.isExtended) {
+            console.log("Multiple screens detected");
+        
+            try {
+              console.log(screens);
+              let primary;
+              let secondaries = [];
+        
+              for (let element of screens.screens) {
+                if (element.isPrimary) {
+                  primary = element;
+                } else {
+                  secondaries.push(element);
+                }
+              }
+              console.log('primary: ', primary);
+              console.log('secondaries: ', secondaries);
+        
+              popup = window.open(url, 'Popup');
+            } catch (err) {
+              console.error(err);
+            }
+        
+          } else {
+            console.log("Single screen detected (or permission not granted)");
+          }
+        }
+        
+        
+        document.getElementById("open").addEventListener('click', screenDetails);
+
+    </script>
+    
+
+    
+
+  <script src="../js/scripts.js"></script>
+  
+</body>
+
+</html>
