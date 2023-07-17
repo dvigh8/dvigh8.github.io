@@ -9,18 +9,46 @@
   <link type="text/css" rel="stylesheet" href="../css/main.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 </head>
 
 <body>
-    <div style="background-color: aquamarine;height: 1080px;width:1920px">
-        <button type="button" id="open" style="padding: 10px;"> Calculate 1920x1080px</button>
-        <p> There are many different sizes of monitors starting at CGA with 320x200px to 8k UHD 7680x4320px this colored box is what is called FullHD or 1080p 1920x1080px</p>
-        <p> Click the button above to calculate how many Full HD monitor space your computer has</p>
+  <input type="button" style="padding: 10px;" value="Calculate 320x200px" onclick="resize(320,200)">
+  <input type="button" style="padding: 10px;" value="Calculate 640x480px" onclick="resize(640,480)">
+  <input type="button" style="padding: 10px;" value="Calculate 1920x1080px" onclick="resize(1920,1080)">
+    <p> There are many different sizes of monitors starting at CGA with 320x200px to 8k UHD 7680x4320px this colored box is what is called FullHD or 1080p 1920x1080px</p>
+    <p> Click the button above to calculate how many Full HD monitor space your computer has</p>
+    <p> You could fit <span id="numberOfDisplays"></span> displays of 
+      <span id="displayWidth"></span> x <span id="displayHeight"></span> size on your current screen</p>
+    <div id="display">
 
     </div>
-    
+
+    <style>
+      
+      #display {
+        background-color: aquamarine;
+        height: 1080px;
+        width: 1920px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+      </style>
 
     <script>
+
+      function resize(width, height) {
+        $('#display').animate({width: width, height:height}, 300);
+        parseFloat(0.0009999999.toFixed(4))
+        $('#numberOfDisplays').html( parseFloat((window.screen.width / width) * (window.screen.height / height) ).toFixed(2) );
+        $('#displayWidth').html(width);
+        $('#displayHeight').html(height);
+      }
+
+
         let url = "about:blank";
         let x = "1000";
         let y = "250";
