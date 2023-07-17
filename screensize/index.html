@@ -1,6 +1,5 @@
 <!doctype html>
 <html>
-
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta charset="utf-8">
@@ -10,17 +9,37 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
+<script>
+  function resize(width, height) {
+    $('#display').animate({width: width, height:height}, 300);
+    parseFloat(0.0009999999.toFixed(4))
+    $('#numberOfDisplays').html( parseFloat((window.screen.width / width) * (window.screen.height / height) ).toFixed(2) );
+    $('#displayWidth').html(width);
+    $('#displayHeight').html(height);
+  }
+</script>
 </head>
 
-<body>
-  <input type="button" style="padding: 10px;" value="Calculate 320x200px" onclick="resize(320,200)">
-  <input type="button" style="padding: 10px;" value="Calculate 640x480px" onclick="resize(640,480)">
-  <input type="button" style="padding: 10px;" value="Calculate 1920x1080px" onclick="resize(1920,1080)">
+<body onload="resize(1920,1080)">
+  <div style="padding:1rem">
+
+    <input type="button" style="padding: 10px;" value="320x200px (CGA)" onclick="resize(320,200)">
+    <input type="button" style="padding: 10px;" value="640x480px (VGA)" onclick="resize(640,480)">
+    <input type="button" style="padding: 10px;" value="1280x720px (HD 720p)" onclick="resize(1280,720)">
+    <input type="button" style="padding: 10px;" value="1280x960px (QuadVGA)" onclick="resize(1280,960)">
+    <input type="button" style="padding: 10px;" value="1920x1080px (FullHD)" onclick="resize(1920,1080)">
+    <input type="button" style="padding: 10px;" value="2560x1080px (UWFHD)" onclick="resize(2560,1080)">
+    <input type="button" style="padding: 10px;" value="2560x1440px ((W)QHD)" onclick="resize(2560,1440)">
+    <input type="button" style="padding: 10px;" value="3440x1440px (UWQHD)" onclick="resize(3440,1440)">
+    <input type="button" style="padding: 10px;" value="3840x2160px (4K UHD)" onclick="resize(3840,2160)">
+    <input type="button" style="padding: 10px;" value="5120x2160px (5K Ultrawide)" onclick="resize(5120,2160)">
+    <input type="button" style="padding: 10px;" value="5120x2880px (5K UHD)" onclick="resize(5120,2880)">
+    <input type="button" style="padding: 10px;" value="7680x4320px (8K UHD)" onclick="resize(7680,4320)">
     <p> There are many different sizes of monitors starting at CGA with 320x200px to 8k UHD 7680x4320px this colored box is what is called FullHD or 1080p 1920x1080px</p>
     <p> Click the button above to calculate how many Full HD monitor space your computer has</p>
     <p> You could fit <span id="numberOfDisplays"></span> displays of 
       <span id="displayWidth"></span> x <span id="displayHeight"></span> size on your current screen</p>
+    </div>
     <div id="display">
 
     </div>
@@ -40,13 +59,7 @@
 
     <script>
 
-      function resize(width, height) {
-        $('#display').animate({width: width, height:height}, 300);
-        parseFloat(0.0009999999.toFixed(4))
-        $('#numberOfDisplays').html( parseFloat((window.screen.width / width) * (window.screen.height / height) ).toFixed(2) );
-        $('#displayWidth').html(width);
-        $('#displayHeight').html(height);
-      }
+      
 
 
         let url = "about:blank";
