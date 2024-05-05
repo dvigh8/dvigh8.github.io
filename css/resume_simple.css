@@ -5,12 +5,12 @@
   max-width: 60em;
   margin-left: 0;
   margin-right: 0;
-  font-family: Helvetica;
+  font-family: Arial;
   margin: 0 auto;
 }
 h2 {
-  font-family: Helvetica;
-  font-size: 4rem;
+  font-family: Arial;
+  font-size: 3rem;
   /* font-size: 7rem; */
   color: #000000;
   font-weight: 400;
@@ -43,13 +43,13 @@ div h5 {
   display: inline-block;
   margin: 0;
   padding: 0;
-  padding-left: .7rem;
+  padding-left: 1rem;
   font-size: 1rem;
 }
 
 ul {
   margin: 0;
-  padding-left: 1.6rem;
+  padding-left: 2.6rem;
 }
 
 li {
